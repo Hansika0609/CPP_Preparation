@@ -1,0 +1,96 @@
+🔒 1. Encapsulation
+Definition: Wrapping data (variables) and methods (functions) that operate on the data into a single unit (class), and restricting direct access to some of the object's components.
+
+Key Point for Interviews:
+
+Encapsulation protects the internal state of an object by using access modifiers (private, public, protected).
+
+Example:
+
+class BankAccount {
+private:
+    double balance;
+
+public:
+    void deposit(double amount) {
+        if (amount > 0) balance += amount;
+    }
+
+    double getBalance() {
+        return balance;
+    }
+};
+Real-world analogy: ATM - you interact with it via a screen (interface), but the internal logic is hidden.
+
+🧬 2. Inheritance
+Definition: Mechanism by which one class (child/derived) inherits properties and behaviors from another class (parent/base).
+
+Key Point for Interviews:
+
+Promotes code reusability and hierarchical classification.
+
+Example:
+
+class Animal {
+public:
+    void eat() { cout << "Eating\n"; }
+};
+
+class Dog : public Animal {
+public:
+    void bark() { cout << "Barking\n"; }
+};
+Now, Dog inherits eat() from Animal.
+
+Real-world analogy: A child inherits traits from parents.
+
+🔁 3. Polymorphism
+Definition: The ability of a function, object, or operator to behave differently based on context.
+
+Types:
+
+Compile-time (Static): Function overloading / operator overloading
+
+Runtime (Dynamic): Method overriding using virtual functions
+
+Key Point for Interviews:
+
+Polymorphism allows interface reuse while changing internal behavior.
+
+Example:
+
+class Shape {
+public:
+    virtual void draw() { cout << "Drawing Shape\n"; }
+};
+
+class Circle : public Shape {
+public:
+    void draw() override { cout << "Drawing Circle\n"; }
+};
+Real-world analogy: A person behaves differently when at work vs at home (same object, different behavior).
+
+🧩 4. Abstraction
+Definition: Hiding complex implementation details and showing only the necessary features of an object.
+
+Key Point for Interviews:
+
+Helps in reducing complexity and increasing efficiency.
+
+Example:
+
+class Car {
+public:
+    void startCar() {
+        // Complex operations hidden
+        cout << "Car Started\n";
+    }
+};
+Real-world analogy: Driving a car – you don’t need to know how the engine works to drive it.
+
+| Concept       | Purpose                            | Real-world Analogy  |
+| ------------- | ---------------------------------- | ------------------- |
+| Encapsulation | Data hiding and protection         | ATM interface       |
+| Inheritance   | Code reusability                   | Parent-child traits |
+| Polymorphism  | Same interface, different behavior | Human roles         |
+| Abstraction   | Hiding internal complexity         | Driving a car       |
